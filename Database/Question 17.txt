@@ -1,0 +1,4 @@
+Question 17. All customers excluding those with rating <= 100 unless they are located in Rome
+=============================================================================================
+
+SELECT * FROM Customer WHERE RATING <= 100 OR (RATING <= 100 AND CITY = 'Rome');

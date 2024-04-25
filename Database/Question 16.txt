@@ -1,0 +1,6 @@
+Question 16. All salespeople with commission between 0.10 and 0.12. (Boundary valuesshould be excluded). 
+===========================================================================================================
+
+SELECT *
+FROM Salesperson
+WHERE COMM > 0.10 AND COMM < 0.12;

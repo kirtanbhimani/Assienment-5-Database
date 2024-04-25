@@ -1,0 +1,8 @@
+Question 05. Get all employee details from the employee table order by First_Name Ascending and Salary descending? 
+
+============================================================To get data in Ascending order by First_name============================================================
+SELECT * FROM EMPLOYEE ORDER BY First_name ASC;
+
+
+============================================================To Get data in Descending Order by Salary ============================================================
+SELECT * FROM EMPLOYEE ORDER BY Salary DESC;

@@ -1,0 +1,31 @@
+Question 01. Create Table Name : Student and Exam 
+
+============================================================To create Database============================================================
+
+CREATE DATABASE Module05;
+
+============================================================To Create Table============================================================
+ 
+CREATE TABLE Student(
+	Rollno Int PRIMARY KEY NOT NULL,
+	Name VARCHAR(20) NOT NULL,
+	Branch VARCHAR(30) NOT NULL
+);
+
+============================================================To Insert Data into Student Table============================================================
+
+INSERT INTO student(Rollno,Name,Branch) VALUES (1,'Jay', 'Computer Science'),(2,'Suhani', 'Electronic and Com'),(3, 'Kriti', 'Electronic and Com');
+
+============================================================To Create Table Exam============================================================
+
+CREATE TABLE Exam(
+	Rollno INT NOT NULL,
+	S_code VARCHAR(20) NOT NULL,
+	Marks INT NOT NULL,
+	P_code VARCHAR(20) NOT NULL,
+	CONSTRAINT exm_frgn_key FOREIGN KEY (Rollno) REFERENCES Student(Rollno)
+);
+
+============================================================To Insert Data into Exam Table============================================================
+
+INSERT INTO  Exam(Rollno,S_code,Marks,P_code) VALUES (1,'CS11', 50, 'CS'),(1,'CS12', 60,'CS'),(2, 'EEC101', 66,'EC'),(2, 'EC102', 70, 'EC' ),(3, 'EC101', 45, 'EC'),(3, 'EC102', 50, 'EC');

@@ -1,0 +1,4 @@
+Question 06. Get employee details from employee table whose first name contains ‘J’. 
+
+============================================================
+SELECT * FROM Employee WHERE First_name LIKE 'J%';

@@ -1,0 +1,47 @@
+Question 11.Create table given below: Salesperson and Customer 
+==============================================================
+
+=============================Creating table Salesperson=============================
+
+
+CREATE TABLE Salesperson("(PK)SNo" INT PRIMARY KEY NOT NULL,
+SNAME VARCHAR(50) NOT NULL,
+CITY VARCHAR(50) NOT NULL,
+COMM FLOAT NOT NULL
+);
+
+
+=============================Inserting Data into Salesperson table =============================
+
+INSERT INTO Salesperson("(PK)SNo", SNAME, CITY, COMM) 
+VALUES 
+(1001, 'Peel', 'London', .12),
+(1002, 'Serres', 'San Jose', .13),
+(1004, 'Motika', 'London', .11),
+(1007, 'Rafkin', 'Barcelona', .15),
+(1003, 'Axelrod', 'New York', .1);
+
+
+=============================Creating table Customer =============================
+
+CREATE TABLE Customer(
+    "(PK)CNM." INT NOT NULL,
+    CNAME VARCHAR(50) NOT NULL,
+    CITY VARCHAR(50) NOT NULL,
+    RATING INT NOT NULL,
+    "(FK)SNo" INT NOT NULL,
+    CONSTRAINT Cust_PMKey PRIMARY KEY ("(PK)CNM."),
+    CONSTRAINT Cust_FRKey FOREIGN KEY ("(FK)SNo") REFERENCES Salesperson("(PK)SNo")
+);
+
+
+=============================Inserting data into customer table =============================
+
+INSERT INTO Customer("(PK)CNM.",CNAME, CITY, RATING, "(FK)SNo")
+VALUES
+(201, 'Hoffman', 'London', 100, 1001),
+(202, 'Giovanne', 'Roe', 200, 1003),
+(203, 'Liu', 'San Jose', 300, 1002),
+(204, 'Grass', 'Barcelona', 100, 1002),
+(206, 'Clemens', 'London', 300, 1007),
+(207, 'Perira', 'Roe', 100, 1004);

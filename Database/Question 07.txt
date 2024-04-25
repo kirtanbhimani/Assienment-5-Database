@@ -1,0 +1,7 @@
+Question 7. Get department wise maximum salary from employee table order by salaryascending? 
+============================================================
+
+SELECT Department, MAX(Salary) AS Max_Salary
+FROM employee
+GROUP BY Department
+ORDER BY Max_Salary ASC;

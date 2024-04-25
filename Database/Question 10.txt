@@ -1,0 +1,52 @@
+Question 10. Create After Insert trigger on Employee table which insert records in viewtable 
+========================================================================================================================================================
+
+============================================================Creating table for Trigger after Inserting data ============================================================
+
+CREATE TABLE  viewtable (
+	Employee_id INT PRIMARY KEY,
+	First_name VARCHAR(50),
+	Last_name VARCHAR(50),
+	Salary BIGINT NOT NULL,
+	Joining_date DATETIME,
+	Department VARCHAR(50)
+);
+
+
+
+============================================================To Create trigger on employee after inserting new data ============================================================
+
+CREATE TRIGGER after_employee_insert
+ON Employee
+AFTER INSERT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO viewtable (Employee_id, First_name, Last_name, Salary, Joining_date, Department)
+	SELECT Employee_id, First_name, Last_name, Salary, Joining_date, Department
+	FROM inserted;
+END;
+
+============================================================To Create table for Trigger after Inserting data============================================================
+
+CREATE TABLE  viewtable (
+	Employee_id INT PRIMARY KEY,
+	First_name VARCHAR(50),
+	Last_name VARCHAR(50),
+	Salary BIGINT NOT NULL,
+	Joining_date DATETIME,
+	Department VARCHAR(50)
+);
+
+============================================================To Create trigger on employee after inserting new data ============================================================
+
+CREATE TRIGGER after_employee_insert
+ON Employee
+AFTER INSERT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO viewtable (Employee_id, First_name, Last_name, Salary, Joining_date, Department)
+	SELECT Employee_id, First_name, Last_name, Salary, Joining_date, Department
+  	FROM inserted;
+END;

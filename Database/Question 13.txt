@@ -1,0 +1,6 @@
+Question 13.All orders for more than $1000. 
+=========================There are niether orders  nor Amount/Price column in both table if I have may be Then i have written query below =========================
+
+SELECT *
+FROM Customer
+WHERE TotalAmount > 1000;
